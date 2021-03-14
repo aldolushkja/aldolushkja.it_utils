@@ -13,17 +13,17 @@ pipeline {
         }
         stage('Build Container From Native Executable') {
             steps {
-                sh 'docker build -f src/main/docker/Dockerfile.native -t localhost:5000/utils .'
+                sh 'docker build -f src/main/docker/Dockerfile.native -t localhost:5000/utils-native .'
             }
         }
         stage('Kill Old Instances') {
             steps {
-                sh 'docker rm -f utils || true'
+                sh 'docker rm -f utils-native || true'
             }
         }
         stage('Run Native Image Container') {
             steps {
-                sh 'docker run -d -p 8100:8080 --name utils localhost:5000/utils'
+                sh 'docker run -d -p 8101:8080 --name utils localhost:5000/utils-native'
             }
         }
     }

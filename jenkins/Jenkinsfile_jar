@@ -1,0 +1,30 @@
+pipeline {
+    agent {
+        any{}
+    }
+    options {
+        skipStagesAfterUnstable()
+    }
+    stages {
+        stage('Build Jar Executable') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+        stage('Build Container From Executable JAR') {
+            steps {
+                sh 'docker build -f src/main/docker/Dockerfile.jvm -t localhost:5000/utils .'
+            }
+        }
+        stage('Kill Old Instances') {
+            steps {
+                sh 'docker rm -f utils || true'
+            }
+        }
+        stage('Run JVM Image Container') {
+            steps {
+                sh 'docker run -d -p 8100:8080 --name utils localhost:5000/utils'
+            }
+        }
+    }
+}
