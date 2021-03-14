@@ -20,7 +20,7 @@ class CodeOne extends HTMLElement {
     async fetchFromServer() {
         const response = await fetch("message.json");
         const json = await response.json();
-        const { filename, contentType } = this.hello;
+        const { filename, contentType } = this.json;
         console.log(filename + contentType)
             // console.log(json)
     }
