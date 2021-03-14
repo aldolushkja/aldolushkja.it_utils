@@ -32,7 +32,7 @@ public class StringsResource {
   @Path("/sha1")
   @Produces(MediaType.TEXT_PLAIN)
   public String getSha1(@QueryParam("text") String text) {
-    if (text == null || text.isBlank()) {
+    if (text == null || text.trim().isEmpty()) {
       return "Fullfill the request with [ ?text=<what you want> ]";
     }
     return factory.getSha1(text);
@@ -42,7 +42,7 @@ public class StringsResource {
   @Path("/sha256")
   @Produces(MediaType.TEXT_PLAIN)
   public String getSha256(@QueryParam("text") String text) {
-    if (text == null || text.isBlank()) {
+    if (text == null || text.trim().isEmpty()) {
       return "Fullfill the request with [ ?text=<what you want> ]";
     }
     return factory.getSha256(text);
