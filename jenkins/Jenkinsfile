@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build Native Executable') {
             steps {
-                sh './mvnw package -Pnative -Dquarkus.native.container-build=true'
+                sh 'mvn package -Pnative -Dquarkus.native.container-build=true'
             }
         }
         stage('Build Container From Native Executable') {
