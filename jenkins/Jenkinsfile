@@ -1,0 +1,30 @@
+pipeline {
+    agent {
+        any{}
+    }
+    options {
+        skipStagesAfterUnstable()
+    }
+    stages {
+        stage('Build Native Executable') {
+            steps {
+                sh './mvnw package -Pnative -Dquarkus.native.container-build=true'
+            }
+        }
+        stage('Build Container From Native Executable') {
+            steps {
+                sh 'docker build -f src/main/docker/Dockerfile.native -t localhost:5000/utils .'
+            }
+        }
+        stage('Kill Old Instances') {
+            steps {
+                sh 'docker rm -f utils || true'
+            }
+        }
+        stage('Run Native Image Container') {
+            steps {
+                sh 'docker run -d -p 8100:8080 --name utils localhost:5000/utils'
+            }
+        }
+    }
+}
