@@ -1,13 +1,16 @@
 package org.acme.lifecycle;
 
+import java.util.Random;
 import java.util.logging.Logger;
 import javax.inject.Inject;
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/numbers")
+@Path("/utils/numbers")
 @Loggable
 public class NumbersResource {
 
@@ -17,8 +20,23 @@ public class NumbersResource {
   @GET
   @Produces(MediaType.TEXT_PLAIN)
   public String getRandomNumber() {
-    String output = String.valueOf(Math.random());
+    Random random = new Random();
+    String output = String.valueOf(random.nextInt(Integer.MAX_VALUE));
     log.info("NumbersResource.getRandomNumber() --- output: " + output);
+    return output;
+  }
+
+  @GET
+  @Path("/limit/{limit}")
+  @Produces(MediaType.TEXT_PLAIN)
+  public String getRandomNumberWithLimit(
+      @DefaultValue("1000") @PathParam("limit") int limitNumber) {
+    if (limitNumber < 0 || limitNumber > Integer.MAX_VALUE) {
+      return "Fullfill the request with correct from number e.x. [ ?limit=1000 ]";
+    }
+    Random random = new Random();
+    String output = String.valueOf(random.nextInt(limitNumber));
+    System.out.println("NumbersResource.getRandomNumberWithLimit() ---- output: " + output);
     return output;
   }
 

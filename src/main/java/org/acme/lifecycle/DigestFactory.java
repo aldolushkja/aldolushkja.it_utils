@@ -16,12 +16,20 @@ public class DigestFactory {
   @Inject
   Sha256Digest sha256Digest;
 
+  @Inject
+  Sha512Digest sha512Digest;
+
   public String getSha1(String text) {
     return sha1Digest.digest(text);
   }
 
   public String getSha256(String text) {
     return sha256Digest.digest(text);
+  }
+
+
+  public String getSha512(String text) {
+    return sha512Digest.digest(text);
   }
 
 }

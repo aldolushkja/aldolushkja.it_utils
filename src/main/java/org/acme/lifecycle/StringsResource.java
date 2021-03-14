@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-@Path("/strings")
+@Path("/utils/strings")
 @Loggable
 public class StringsResource {
 
@@ -46,6 +46,16 @@ public class StringsResource {
       return "Fullfill the request with [ ?text=<what you want> ]";
     }
     return factory.getSha256(text);
+  }
+
+  @GET
+  @Path("/sha512")
+  @Produces(MediaType.TEXT_PLAIN)
+  public String getSha512(@QueryParam("text") String text) {
+    if (text == null || text.trim().isEmpty()) {
+      return "Fullfill the request with [ ?text=<what you want> ]";
+    }
+    return factory.getSha512(text);
   }
 
 }
