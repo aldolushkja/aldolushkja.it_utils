@@ -1,5 +1,6 @@
 package org.acme.lifecycle;
 
+import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -9,7 +10,14 @@ import javax.ws.rs.core.Response;
 
 @Path("/utils/people")
 @Produces(MediaType.APPLICATION_JSON)
+@Loggable
 public class PersonResource {
+
+  @GET
+  public List<Person> getPersons() {
+    return Person.findAll().list();
+  }
+
 
   @GET
   @Path("/name/{name}")

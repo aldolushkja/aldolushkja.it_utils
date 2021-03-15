@@ -1,20 +1,31 @@
 package org.acme.lifecycle;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 @Table(name = "contabo_user")
-public class User {
+public class User extends PanacheEntity {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
   private String username;
   private String password;
+
+  public User(String username, String password) {
+    super();
+    this.username = username;
+    this.password = password;
+  }
+
+  public static List<User> buildRandomUser() {
+    List<User> users = new ArrayList<>();
+    for (int i = 0; i < 20; i++) {
+      users.add(new User("duke" + i, "heyduke"));
+    }
+    return users;
+  }
 
   public User() {}
 

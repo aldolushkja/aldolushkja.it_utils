@@ -32,20 +32,20 @@ body {
 
 header {
     grid-area: header;
-    background: var(--color-one-yellow, --color-one-blu);
+    /* background: var(--color-one-yellow, --color-one-blu); */
 }
 
 footer {
     grid-area: footer;
-    background: var(--color-one-yellow, --color-one-blu);
+    /* background: var(--color-one-yellow, --color-one-blu); */
 }
 
 article {
     grid-area: article;
-    background: var(--color-one-blu, red);
+    /* background: var(--color-one-blu, red); */
 }
 
 nav {
     grid-area: nav;
-    background: red;
+    /* background: red; */
 }
