@@ -1,11 +1,8 @@
 package org.acme.lifecycle;
 
-import java.util.List;
-import io.quarkus.mongodb.panache.MongoEntity;
-import io.quarkus.mongodb.panache.PanacheMongoEntity;
-
-@MongoEntity(database = "person")
-public class Person extends PanacheMongoEntity {
+// @MongoEntity(database = "person")
+public class Person {
+  // extends PanacheMongoEntity {
   public String name;
   public String password;
   public Role role;
@@ -31,19 +28,19 @@ public class Person extends PanacheMongoEntity {
     return new Person(name, "GuestPasswordRocks", Role.GUEST);
   }
 
-  public static Person findByName(String name) {
-    return find("name", name).firstResult();
-  }
-
-  public static List<Person> findByRoleName(String roleName) {
-    return list("role", Role.valueOf(roleName));
-  }
-
-  public static List<Person> findAdmins() {
-    return list("role", Role.ADMIN);
-  }
-
-  public static void deleteLoics() {
-    delete("name", "Loïc");
-  }
+  // public static Person findByName(String name) {
+  // return find("name", name).firstResult();
+  // }
+  //
+  // public static List<Person> findByRoleName(String roleName) {
+  // return list("role", Role.valueOf(roleName));
+  // }
+  //
+  // public static List<Person> findAdmins() {
+  // return list("role", Role.ADMIN);
+  // }
+  //
+  // public static void deleteLoics() {
+  // delete("name", "Loïc");
+  // }
 }

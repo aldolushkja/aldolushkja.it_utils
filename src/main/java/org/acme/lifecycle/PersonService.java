@@ -11,11 +11,11 @@ public class PersonService {
 
   @PostConstruct
   public void init() {
-    for (int i = 0; i < 10; i++) {
-      Person.persist(Person.buildAdmin("admin" + i));
-    }
-    for (int i = 0; i < 10; i++) {
-      Person.persist(Person.buildGuest("guest" + i));
-    }
+    // for (int i = 0; i < 10; i++) {
+    // Person.persist(Person.buildAdmin("admin" + i));
+    // }
+    // for (int i = 0; i < 10; i++) {
+    // Person.persist(Person.buildGuest("guest" + i));
+    // }
   }
 }
