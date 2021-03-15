@@ -10,7 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/utils/numbers")
+@Path("numbers")
 @Loggable
 public class NumbersResource {
 

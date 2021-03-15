@@ -7,7 +7,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/utils/users")
+@Path("users")
 @Produces(MediaType.APPLICATION_JSON)
 @Loggable
 public class UserResource {
