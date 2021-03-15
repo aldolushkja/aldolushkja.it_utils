@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Kill Docker Compose Infrastructure') {
             steps {
-                sh 'docker-compose -f utilsNativeStack.yml down'
+                sh 'docker-compose -f utilsNativeStack.yml kill'
             }
         }
         stage('START Docker Compose Infrastructure') {

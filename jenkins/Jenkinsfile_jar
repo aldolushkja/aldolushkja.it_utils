@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Kill Docker Compose Infrastructure') {
             steps {
-                sh 'docker-compose -f utilsStack.yml down'
+                sh 'docker-compose -f utilsStack.yml kill'
             }
         }
         stage('START Docker Compose Infrastructure') {
