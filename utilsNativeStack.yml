@@ -1,7 +1,7 @@
 version: "3.3"
 
 services:
-  mongo:
+  mongo-native:
     image: mongo
     volumes:
       - mongo_data:/data/db
@@ -10,7 +10,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: utils_user
       MONGO_INITDB_ROOT_PASSWORD: vF0hHOy2kKT21NPSJD4CrPfV
 
-  mysql:
+  mysql-native:
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
@@ -25,19 +25,19 @@ services:
     depends_on:
       - mysql
       - mongo
-    image: localhost:5000/utils
+    image: localhost:5000/utils-native
     volumes:
       - app_data:/app/work/
     ports:
       - "8100:8080"
     restart: always
     environment:
-      QUARKUS_DATASOURCE_JDBC_URL: mysql:3306/utils
+      QUARKUS_DATASOURCE_JDBC_URL: mysql-native:3306/utils
       QUARKUS_DATASOURCE_USERNAME: utils_user
       QUARKUS_DATASOURCE_PASSWORD: zb7JNlMKW8CMj65BVJekAOaz
-      QUARKUS_MONGODB_CONNECTION-STRING: mongodb://utils_user:vF0hHOy2kKT21NPSJD4CrPfV@mongo:27017
+      QUARKUS_MONGODB_CONNECTION-STRING: mongodb://utils_user:vF0hHOy2kKT21NPSJD4CrPfV@mongo-native:27017
 
 volumes:
-  db_data: {}
-  mongo_data: {}
-  app_data: {}
+  db_native_data: {}
+  mongo_native_data: {}
+  app_native_data: {}

@@ -21,9 +21,14 @@ pipeline {
                 sh 'docker rm -f utils-native || true'
             }
         }
-        stage('Run Native Image Container') {
+        stage('Kill Docker Compose Infrastructure') {
             steps {
-                sh 'docker run -d --network utils-infrastructure_default -p 8101:8080 --name utils-native localhost:5000/utils-native'
+                sh 'docker-compose -f utilsNativeStack.yml down'
+            }
+        }
+        stage('START Docker Compose Infrastructure') {
+            steps {
+                sh 'docker-compose -f utilsNativeStack.yml up -d'
             }
         }
     }

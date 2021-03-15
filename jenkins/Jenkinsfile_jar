@@ -21,9 +21,14 @@ pipeline {
                 sh 'docker rm -f utils || true'
             }
         }
-        stage('Run JVM Image Container') {
+        stage('Kill Docker Compose Infrastructure') {
             steps {
-                sh 'docker run -d --network utils-infrastructure_default -p 8100:8080 --name utils localhost:5000/utils'
+                sh 'docker-compose -f utilsStack.yml down'
+            }
+        }
+        stage('START Docker Compose Infrastructure') {
+            steps {
+                sh 'docker-compose -f utilsStack.yml up -d'
             }
         }
     }
