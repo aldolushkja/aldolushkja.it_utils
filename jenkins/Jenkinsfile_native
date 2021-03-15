@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Run Native Image Container') {
             steps {
-                sh 'docker run -d -p 8101:8080 --name utils-native localhost:5000/utils-native'
+                sh 'docker run -d --network utils-infrastructure_default -p 8101:8080 --name utils-native localhost:5000/utils-native'
             }
         }
     }

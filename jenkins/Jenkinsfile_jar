@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Run JVM Image Container') {
             steps {
-                sh 'docker run -d -p 8100:8080 --name utils localhost:5000/utils'
+                sh 'docker run -d --network utils-infrastructure_default -p 8100:8080 --name utils localhost:5000/utils'
             }
         }
     }
