@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build Jar Executable') {
             steps {
-                sh 'mvn package'
+                sh 'mvn clean package'
             }
         }
         stage('Build Container From Executable JAR') {
@@ -21,11 +21,11 @@ pipeline {
                 sh 'docker rm -f utils || true'
             }
         }
-        stage('Kill Docker Compose Infrastructure') {
-            steps {
-                sh 'docker-compose -f utilsStack.yml kill'
-            }
-        }
+        // stage('Kill Docker Compose Infrastructure') {
+        //     steps {
+        //         sh 'docker-compose -f utilsStack.yml kill'
+        //     }
+        // }
         stage('Run Docker Image in JVM Mode') {
             steps {
                 sh 'docker run -d --network=utils-infrastructure -p 8100:8080 --name utils localhost:5000/utils'
