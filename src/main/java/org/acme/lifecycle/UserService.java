@@ -12,12 +12,11 @@ public class UserService {
 
   @PostConstruct
   public void init() {
-    this.buildInitUsers();
+    // this.buildInitUsers();
   }
 
   @Transactional
   public void buildInitUsers() {
     User.persist(User.buildRandomUser());
-
   }
 }

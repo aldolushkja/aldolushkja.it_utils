@@ -26,10 +26,15 @@ pipeline {
                 sh 'docker-compose -f utilsStack.yml kill'
             }
         }
-        stage('START Docker Compose Infrastructure') {
+        stage('Run Docker Image in JVM Mode') {
             steps {
-                sh 'docker-compose -f utilsStack.yml up -d'
+                sh 'docker run -d --network utils-infrastructure -p 8100:8080 --name utils localhost:5000/utils'
             }
         }
+        // stage('START Docker Compose Infrastructure') {
+        //     steps {
+        //         sh 'docker-compose -f utilsStack.yml up -d'
+        //     }
+        // }
     }
 }
