@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Run Docker Image in JVM Mode') {
             steps {
-                sh 'docker run -d --network utils-infrastructure -p 8100:8080 --name utils localhost:5000/utils'
+                sh 'docker run -d --network=utils-infrastructure -p 8100:8080 --name utils localhost:5000/utils'
             }
         }
         // stage('START Docker Compose Infrastructure') {
