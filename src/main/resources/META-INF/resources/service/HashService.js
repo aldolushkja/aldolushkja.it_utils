@@ -1,7 +1,7 @@
 const generateSha1 = async (text) => {
   console.log("generateSha1- input: " + text);
 
-  const endpoint = "http://localhost:8081/strings/sha1?text=" + text;
+  const endpoint = "http://localhost:6080/strings/sha1?text=" + text;
   const response = await fetch(endpoint);
   const body = await response.text();
 
