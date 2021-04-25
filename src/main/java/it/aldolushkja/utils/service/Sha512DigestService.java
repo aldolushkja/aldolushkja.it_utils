@@ -1,5 +1,6 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.service;
 
+import it.aldolushkja.utils.enumz.DigestType;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -9,7 +10,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @ApplicationScoped
-public class Sha1Digest implements DigestContent {
+public class Sha512DigestService implements DigestContent {
 
   @Inject
   Logger log;
@@ -19,18 +20,18 @@ public class Sha1Digest implements DigestContent {
     MessageDigest digest;
     String sha1 = "";
     try {
-      digest = MessageDigest.getInstance(DigestType.SHA1.getValue());
+      digest = MessageDigest.getInstance(DigestType.SHA512.getValue());
       digest.reset();
       digest.update(plainText.getBytes(StandardCharsets.UTF_8));
       sha1 = String.format("%040x", new BigInteger(1, digest.digest()));
-      log.info("Sha1Digest.digest() --- input: " + plainText + ", output: " + sha1);
+      log.info("Sha256DigestService.digest() --- input: " + plainText + ", output: " + sha1);
 
       return sha1;
 
     } catch (NoSuchAlgorithmException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
-      log.severe("Sha1Digest.digest() --- message: " + e.getMessage());
+      log.severe("Sha256DigestService.digest() --- message: " + e.getMessage());
       return "Something goes wrong :-(";
     }
   }

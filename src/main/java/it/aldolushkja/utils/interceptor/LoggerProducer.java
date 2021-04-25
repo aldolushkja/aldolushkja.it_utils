@@ -1,4 +1,4 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.interceptor;
 
 import java.util.logging.Logger;
 import javax.enterprise.inject.Produces;

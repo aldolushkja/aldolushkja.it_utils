@@ -1,4 +1,4 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.enumz;
 
 public enum Role {
   ADMIN("ADMIN"), GUEST("GUEST"), USER("USER"), ANONYMOUS("ANONYMOUS");

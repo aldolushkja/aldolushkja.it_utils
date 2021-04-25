@@ -1,9 +1,10 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.rest;
 
+import it.aldolushkja.utils.interceptor.Loggable;
+import it.aldolushkja.utils.service.DigestFactory;
 import java.util.UUID;
 import java.util.logging.Logger;
 import javax.inject.Inject;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

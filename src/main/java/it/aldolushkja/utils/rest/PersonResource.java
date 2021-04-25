@@ -1,4 +1,6 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.rest;
+
+import it.aldolushkja.utils.interceptor.Loggable;
 
 // @Path("/utils/people")
 // @Produces(MediaType.APPLICATION_JSON)

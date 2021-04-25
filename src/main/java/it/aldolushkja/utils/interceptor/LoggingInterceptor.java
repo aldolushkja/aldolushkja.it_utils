@@ -1,4 +1,4 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.interceptor;
 
 import java.time.Duration;
 import java.time.Instant;

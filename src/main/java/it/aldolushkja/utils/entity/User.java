@@ -1,10 +1,10 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.entity;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 @Table(name = "contabo_user")
@@ -27,7 +27,8 @@ public class User extends PanacheEntity {
     return users;
   }
 
-  public User() {}
+  public User() {
+  }
 
   public Long getId() {
     return id;
@@ -52,7 +53,6 @@ public class User extends PanacheEntity {
   public void setPassword(String password) {
     this.password = password;
   }
-
 
 
 }

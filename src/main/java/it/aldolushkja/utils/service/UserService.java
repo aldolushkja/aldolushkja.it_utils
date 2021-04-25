@@ -1,9 +1,11 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.service;
 
+import io.quarkus.runtime.Startup;
+import it.aldolushkja.utils.entity.User;
+import it.aldolushkja.utils.interceptor.Loggable;
 import javax.annotation.PostConstruct;
 import javax.inject.Singleton;
 import javax.transaction.Transactional;
-import io.quarkus.runtime.Startup;
 
 @Startup
 @Singleton

@@ -1,5 +1,7 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.rest;
 
+import it.aldolushkja.utils.entity.User;
+import it.aldolushkja.utils.interceptor.Loggable;
 import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

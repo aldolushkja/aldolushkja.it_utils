@@ -1,4 +1,4 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.interceptor;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -1,4 +1,4 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

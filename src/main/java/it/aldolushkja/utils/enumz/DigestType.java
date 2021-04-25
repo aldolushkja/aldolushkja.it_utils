@@ -1,4 +1,4 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.enumz;
 
 public enum DigestType {
   SHA256("SHA-256"), SHA512("SHA-512"), SHA1("SHA-1");

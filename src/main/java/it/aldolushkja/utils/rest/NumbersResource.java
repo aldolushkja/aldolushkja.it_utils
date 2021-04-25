@@ -1,5 +1,6 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.rest;
 
+import it.aldolushkja.utils.interceptor.Loggable;
 import java.util.Random;
 import java.util.logging.Logger;
 import javax.inject.Inject;

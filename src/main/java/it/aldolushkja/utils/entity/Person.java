@@ -1,7 +1,10 @@
-package org.acme.lifecycle;
+package it.aldolushkja.utils.entity;
+
+import it.aldolushkja.utils.enumz.Role;
 
 // @MongoEntity(database = "person")
 public class Person {
+
   // extends PanacheMongoEntity {
   public String name;
   public String password;
