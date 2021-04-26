@@ -15,8 +15,11 @@ class Sha1Input extends HTMLElement {
           <h2>Generate SHA1</h2>
           <textarea id="textArea"
                     style="width: 70%; height: 10rem;"></textarea><br>
-          <button id="sha1Btn" @click="${e => this.genSha1()}">Genera</button>
-          <button id="randomText" @click="${e => this.insertRandomContent()}">
+          <button class="button mt-2  is-primary is-rounded" id="sha1Btn"
+                  @click="${e => this.genSha1()}">Genera
+          </button>
+          <button class="button mt-2 is-info is-light is-rounded"
+                  id="randomText" @click="${e => this.insertRandomContent()}">
             Random text
           </button>
           <textarea id="output" style="visibility: hidden;"></textarea><br>
