@@ -1,26 +1,27 @@
 import {html, render} from '../lib/lit-html.js';
-import {buildSha1} from '../service/HashService.js';
+import {buildSha256} from '../service/HashService.js';
 import './TimeElements.js';
 
-class Sha1Input extends HTMLElement {
+class Sha256Input extends HTMLElement {
   connectedCallback() {
     this._render();
   }
 
   _render() {
     const template = html`
-      <div>
+      <div class="card-content">
         <div style="display=flex;flex-direction:column;">
-          <h2>Generate SHA1</h2>
+          <h2>Generate SHA256</h2>
           <textarea id="textArea"
                     style="width: 70%; height: 10rem;"></textarea><br>
           <button class="button mt-2  is-primary is-rounded" id="sha1Btn"
-                  @click="${e => this.genSha1()}">Genera
+                  @click="${e => this.genSha256()}">Genera
           </button>
           <button class="button mt-2 is-info is-light is-rounded"
                   id="randomText" @click="${e => this.insertRandomContent()}">
             Random text
           </button>
+          <textarea id="output" style="visibility: hidden;"></textarea><br>
         </div>
       </div>
     `;
@@ -31,15 +32,15 @@ class Sha1Input extends HTMLElement {
     return (!string || 0 === string.length);
   }
 
-  genSha1() {
+  genSha256() {
     this.plainText = document.getElementById('textArea');
     const input = this.plainText.innerHTML;
-    console.log('input sha1: ' + input);
+    console.log('input sha256: ' + input);
     if (this.isEmpty(input)) {
       alert("Inserire testo prima di proseguire");
       return;
     }
-    buildSha1(input);
+    buildSha256(input);
   }
 
   async insertRandomContent() {
@@ -50,4 +51,4 @@ class Sha1Input extends HTMLElement {
   }
 }
 
-customElements.define('sha1-input', Sha1Input);
+customElements.define('sha256-input', Sha256Input);

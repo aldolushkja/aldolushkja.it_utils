@@ -36,7 +36,8 @@ public class StringsResource {
   @GET
   @Path("/sha1")
   @Produces(MediaType.TEXT_PLAIN)
-  public String getSha1(@QueryParam("text") @Size(min = 5, max = 100, message = "Testo deve essere compreso tra 5 e 100 caratteri") String text) {
+  public String getSha1(
+      @QueryParam("text") @Size(min = 5, max = 100, message = "Testo deve essere compreso tra 5 e 100 caratteri") String text) {
     if (text == null || text.trim().isEmpty()) {
       return ERROR_MSG;
     }
@@ -51,6 +52,27 @@ public class StringsResource {
       return ERROR_MSG;
     }
     return factory.getSha256(text);
+  }
+
+
+  @GET
+  @Path("/base64/encode")
+  @Produces(MediaType.TEXT_PLAIN)
+  public String encodeBase64(@QueryParam("text") String text) {
+    if (text == null || text.trim().isEmpty()) {
+      return ERROR_MSG;
+    }
+    return factory.encodeWithBase64(text);
+  }
+
+  @GET
+  @Path("/base64/decode")
+  @Produces(MediaType.TEXT_PLAIN)
+  public String decodeBase64(@QueryParam("text") String text) {
+    if (text == null || text.trim().isEmpty()) {
+      return ERROR_MSG;
+    }
+    return factory.decodeBase64(text);
   }
 
   @GET
