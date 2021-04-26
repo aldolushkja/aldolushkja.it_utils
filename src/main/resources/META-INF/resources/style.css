@@ -4,20 +4,18 @@
     --animation-01: 3s infinite alternate slidein;
 }
 
+
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     margin: 0;
     padding: 0;
 }
 
 body nav, article, footer {
-    display: flex;
-    flex-direction: column;
     margin: 2rem;
     padding: 1rem;
-    justify-content: center;
-    align-items: center;
 }
 
 @media screen and (max-width: 40em) {

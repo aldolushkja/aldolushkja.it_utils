@@ -4,6 +4,9 @@
 <head>
   <title>Aldo Lushkja :: Common Developer Utils</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
   <meta name="viewport" content="width=device-width">
 </head>
 
@@ -16,34 +19,24 @@
     <h3>Random utilities</h3>
     <ul>
       <li>
-        <a href="/utils/strings/sha1?text=sample text to hash" target="_blank">Sha1</a>
+        <a href="/sha1">Sha1</a>
       </li>
 
       <li>
-        <a href="/utils/strings/sha256?text=sample text to hash" target="_blank">Sha256</a>
+        <a href="/sha256">Sha256</a>
       </li>
       <li>
-        <a href="/utils/strings/uuid" target="_blank">Random UUID</a>
+        <a href="/uuid">Random UUID</a>
       </li>
       <li>
-        <a href="/utils/numbers" target="_blank">Random Number</a>
-      </li>
-      <li>
-        <a href="/utils/numbers/limit/" target="_blank">Random Number with Limit</a>
+        <a href="/numbers">Random Number</a>
       </li>
     </ul>
   </nav>
   <article>
-    <time-elements></time-elements>
-    <!-- <code-one message="enjoy"></code-one> -->
-    <sha1-input></sha1-input>
-    <sha1-output></sha1-output>
-
-    <!-- <div style="width: 50%; display:flex;flex-direction:column;">
-        <h2>Generate SHA1</h2>
-        <input id="plainText"></input>
-        <button id="sha1Btn" type="submit" onclick="genSha1()">Genera</button>
-    </div> -->
+    <div class="view">
+      <sha1-container></sha1-container>
+    </div>
   </article>
   <footer>copyright &copy; 2021</footer>
 </main>

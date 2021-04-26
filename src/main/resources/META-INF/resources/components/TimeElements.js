@@ -1,4 +1,4 @@
-import './lib/time-elements.js';
+import '../lib/time-elements.js';
 
 class TimeElements extends HTMLElement {
   connectedCallback() {

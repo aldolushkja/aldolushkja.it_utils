@@ -1,14 +1,14 @@
-const generateSha1 = async (text) => {
+const buildSha1 = async (text) => {
   console.log("generateSha1- input: " + text);
 
   const endpoint = "http://localhost:6080/strings/sha1?text=" + text;
   const response = await fetch(endpoint);
-  const body = await response.text();
+  const sha1 = await response.text();
 
-  console.log("generateSha1- response_body: " + body);
+  console.log("generateSha1- response_body: " + sha1);
 
   const messageEvent = new CustomEvent('sha1-event', {
-    detail: body,
+    detail: sha1,
     bubbles: true
   });
   dispatchEvent(messageEvent);
@@ -36,4 +36,4 @@ const generateSha1 = async (text) => {
 //     dispatchEvent({ messageEvent });
 // }
 
-export {generateSha1};
+export {buildSha1};
