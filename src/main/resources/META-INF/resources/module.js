@@ -4,7 +4,7 @@ import "./components/Sha1Container.js";
 import "./components/TimeElements.js";
 import {Router} from './lib/vaadin-router.js';
 
-const outlet = document.querySelector('.view');
+const outlet = document.querySelector('#view');
 const router = new Router(outlet);
 router.setRoutes([
   {path: '/', component: 'x-home-view'},
