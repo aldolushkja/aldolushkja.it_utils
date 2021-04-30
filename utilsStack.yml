@@ -7,10 +7,10 @@ services:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: vF0hHOy2kKT21NPSJD4CrPfV
-      MYSQL_DATABASE: utils
-      MYSQL_USER: utils_user
-      MYSQL_PASSWORD: zb7JNlMKW8CMj65BVJekAOaz
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: 
+      MYSQL_USER: 
+      MYSQL_PASSWORD: 
 
   service:
     depends_on:
@@ -22,9 +22,9 @@ services:
       - "8100:8080"
     restart: always
     environment:
-      QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://mysql:3306/utils
-      QUARKUS_DATASOURCE_USERNAME: utils_user
-      QUARKUS_DATASOURCE_PASSWORD: zb7JNlMKW8CMj65BVJekAOaz
+      QUARKUS_DATASOURCE_JDBC_URL: 
+      QUARKUS_DATASOURCE_USERNAME: 
+      QUARKUS_DATASOURCE_PASSWORD: 
 
 volumes:
   db_data: {}
