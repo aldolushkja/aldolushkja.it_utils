@@ -40,3 +40,4 @@ nb-configuration.xml
 .mvn/
 /.apt_generated/
 /.apt_generated_tests/
+Jenkinsfile

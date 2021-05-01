@@ -1,7 +1,7 @@
 version: "3.3"
 
 services:
-  mysql:
+  mysql-jvm:
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
@@ -14,7 +14,7 @@ services:
 
   service:
     depends_on:
-      - mysql
+      - mysql-jvm
     image: localhost:5000/utils-be
     volumes:
       - app_data:/app/work/
@@ -23,7 +23,7 @@ services:
     restart: always
     environment:
       QUARKUS_DATASOURCE_DB_KIND: mysql
-      QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://mysql:3306/utils
+      QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://mysql-jvm:3306/utils
       QUARKUS_DATASOURCE_USERNAME: utils_user
       QUARKUS_DATASOURCE_PASSWORD: zb7JNlMKW8CMj65BVJekAOaz
 
@@ -31,5 +31,5 @@ volumes:
   db_data: {}
   app_data: {}
 
-networks:
-  bridge:
+# networks:
+#   bridge:
