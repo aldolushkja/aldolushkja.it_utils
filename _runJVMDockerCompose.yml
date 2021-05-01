@@ -15,20 +15,20 @@ services:
   service:
     depends_on:
       - mysql
-    image: localhost:5000/utils
+    image: localhost:5000/utils-be
     volumes:
       - app_data:/app/work/
     ports:
       - "8100:8080"
     restart: always
     environment:
+      QUARKUS_DATASOURCE_DB_KIND: mysql
       QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://mysql:3306/utils
       QUARKUS_DATASOURCE_USERNAME: utils_user
       QUARKUS_DATASOURCE_PASSWORD: zb7JNlMKW8CMj65BVJekAOaz
 
 volumes:
   db_data: {}
-  mongo_data: {}
   app_data: {}
 
 networks:
