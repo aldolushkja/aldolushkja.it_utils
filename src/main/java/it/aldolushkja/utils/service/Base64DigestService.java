@@ -2,9 +2,10 @@ package it.aldolushkja.utils.service;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
-import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+
+import org.slf4j.Logger;
 
 @ApplicationScoped
 public class Base64DigestService implements DigestContent {

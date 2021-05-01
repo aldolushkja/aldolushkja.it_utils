@@ -5,9 +5,10 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+
+import org.slf4j.Logger;
 
 @ApplicationScoped
 public class Sha1DigestService implements DigestContent {
@@ -31,7 +32,7 @@ public class Sha1DigestService implements DigestContent {
     } catch (NoSuchAlgorithmException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
-      log.severe("Sha1DigestService.digest() --- message: " + e.getMessage());
+      log.error("Sha1DigestService.digest() --- message: " + e.getMessage());
       return "Something goes wrong :-(";
     }
   }

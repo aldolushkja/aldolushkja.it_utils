@@ -2,7 +2,6 @@ package it.aldolushkja.utils.rest;
 
 import it.aldolushkja.utils.interceptor.Loggable;
 import java.util.Random;
-import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
@@ -16,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 public class NumbersResource {
 
   @Inject
-  Logger log;
+  org.slf4j.Logger log;
 
   @GET
   @Produces(MediaType.TEXT_PLAIN)
@@ -37,7 +36,7 @@ public class NumbersResource {
     }
     Random random = new Random();
     String output = String.valueOf(random.nextInt(limitNumber));
-    System.out.println("NumbersResource.getRandomNumberWithLimit() ---- output: " + output);
+    log.info("NumbersResource.getRandomNumberWithLimit() ---- output: " + output);
     return output;
   }
 

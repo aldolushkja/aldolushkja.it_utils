@@ -3,7 +3,6 @@ package it.aldolushkja.utils.rest;
 import it.aldolushkja.utils.interceptor.Loggable;
 import it.aldolushkja.utils.service.DigestFactory;
 import java.util.UUID;
-import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.validation.constraints.Size;
 import javax.ws.rs.GET;
@@ -11,6 +10,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+
+import org.slf4j.Logger;
 
 @Path("/strings")
 @Loggable

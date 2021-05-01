@@ -1,14 +1,15 @@
 package it.aldolushkja.utils.interceptor;
 
-import java.util.logging.Logger;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
+
+import org.slf4j.LoggerFactory;
 
 public class LoggerProducer {
 
   @Produces
-  public Logger logger(InjectionPoint ip) {
-    return Logger.getLogger(ip.getMember().getDeclaringClass().getName());
+  public org.slf4j.Logger logger(InjectionPoint ip) {
+    return LoggerFactory.getLogger(ip.getMember().getDeclaringClass().getName());
   }
 
 }

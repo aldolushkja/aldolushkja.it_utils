@@ -1,8 +1,9 @@
 package it.aldolushkja.utils.service;
 
-import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+
+import org.slf4j.Logger;
 
 @ApplicationScoped
 public class DigestFactory {
