@@ -22,9 +22,9 @@ services:
       - "8100:8080"
     restart: always
     environment:
-      QUARKUS_DATASOURCE_JDBC_URL: 
-      QUARKUS_DATASOURCE_USERNAME: 
-      QUARKUS_DATASOURCE_PASSWORD: 
+      QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://mysql:3306/utils
+      QUARKUS_DATASOURCE_USERNAME: utils_user
+      QUARKUS_DATASOURCE_PASSWORD: zb7JNlMKW8CMj65BVJekAOaz
 
 volumes:
   db_data: {}
