@@ -7,10 +7,10 @@ services:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 
-      MYSQL_DATABASE: 
-      MYSQL_USER: 
-      MYSQL_PASSWORD: 
+      MYSQL_ROOT_PASSWORD: vF0hHOy2kKT21NPSJD4CrPfV
+      MYSQL_DATABASE: utils
+      MYSQL_USER: utils_user
+      MYSQL_PASSWORD: zb7JNlMKW8CMj65BVJekAOaz
 
   service:
     depends_on:
