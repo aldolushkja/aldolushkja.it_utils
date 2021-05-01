@@ -1,0 +1,1 @@
+docker build -f src/main/docker/Dockerfile.native -t localhost:5000/utils-be_native .

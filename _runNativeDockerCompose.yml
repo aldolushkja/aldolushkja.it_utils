@@ -6,6 +6,8 @@ services:
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: vF0hHOy2kKT21NPSJD4CrPfV
@@ -20,11 +22,11 @@ services:
     volumes:
       - app_data:/app/work/
     ports:
-      - "8100:8080"
+      - "8101:8080"
     restart: always
     environment:
       QUARKUS_DATASOURCE_DB_KIND: mysql
-      QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://mysql:3306/utils
+      QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://mysql-native:3307/utils
       QUARKUS_DATASOURCE_USERNAME: utils_user
       QUARKUS_DATASOURCE_PASSWORD: zb7JNlMKW8CMj65BVJekAOaz
 
